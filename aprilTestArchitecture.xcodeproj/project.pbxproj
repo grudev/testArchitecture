@@ -30,7 +30,6 @@
 		9F90198124A3237500987C08 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90198024A3237500987C08 /* ViewControllerAssembly.swift */; };
 		9F90198524A32FEE00987C08 /* DataNetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90198424A32FEE00987C08 /* DataNetworkRepository.swift */; };
 		9F90198724A32FFA00987C08 /* DataMockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90198624A32FFA00987C08 /* DataMockRepository.swift */; };
-		9F90198A24A3326E00987C08 /* DataCacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90198924A3326E00987C08 /* DataCacheRepository.swift */; };
 		9F90198C24A3329C00987C08 /* DataLocalCacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90198B24A3329C00987C08 /* DataLocalCacheRepository.swift */; };
 		9F90198E24A332DF00987C08 /* DataMockCacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90198D24A332DF00987C08 /* DataMockCacheRepository.swift */; };
 		9F90199024A3451F00987C08 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90198F24A3451F00987C08 /* BaseViewModel.swift */; };
@@ -66,7 +65,6 @@
 		9F90198024A3237500987C08 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
 		9F90198424A32FEE00987C08 /* DataNetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNetworkRepository.swift; sourceTree = "<group>"; };
 		9F90198624A32FFA00987C08 /* DataMockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMockRepository.swift; sourceTree = "<group>"; };
-		9F90198924A3326E00987C08 /* DataCacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheRepository.swift; sourceTree = "<group>"; };
 		9F90198B24A3329C00987C08 /* DataLocalCacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLocalCacheRepository.swift; sourceTree = "<group>"; };
 		9F90198D24A332DF00987C08 /* DataMockCacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMockCacheRepository.swift; sourceTree = "<group>"; };
 		9F90198F24A3451F00987C08 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 		9F90198824A3325A00987C08 /* DataCacheRepository */ = {
 			isa = PBXGroup;
 			children = (
-				9F90198924A3326E00987C08 /* DataCacheRepository.swift */,
 				9F90198B24A3329C00987C08 /* DataLocalCacheRepository.swift */,
 				9F90198D24A332DF00987C08 /* DataMockCacheRepository.swift */,
 			);
@@ -426,7 +423,6 @@
 				9F90197D24A322C300987C08 /* RepositoryAssembly.swift in Sources */,
 				9F90194324A262C000987C08 /* ViewController.swift in Sources */,
 				9F90198724A32FFA00987C08 /* DataMockRepository.swift in Sources */,
-				9F90198A24A3326E00987C08 /* DataCacheRepository.swift in Sources */,
 				9F90196824A26B7100987C08 /* DataResponse.swift in Sources */,
 				9F90195824A2677400987C08 /* Disposable.swift in Sources */,
 				9F90197324A2AEDB00987C08 /* ReusableViewIdentifiers.swift in Sources */,

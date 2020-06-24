@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataLocalCacheRepository: DataCacheRepository {
+class DataLocalCacheRepository: DataRepository {
     
     typealias Output = Result<[DataResponse], ErrorModel>
     

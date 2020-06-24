@@ -35,3 +35,10 @@ extension UseCaseable {
     }
     
 }
+
+struct RepoInjectionType {
+    static let real = "real"
+    static let cache = "cache"
+    static let realMock = "real"
+    static let cacheMock = "cache"
+}

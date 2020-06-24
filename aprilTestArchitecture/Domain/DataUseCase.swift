@@ -13,13 +13,11 @@ class DataUseCase: UseCaseable {
     typealias Input = DataRequest
     typealias Output = Result<[DataResponse], ErrorModel>
     
-    typealias CompletionHandler = ((_ output: Output) -> ())?
-    
     // MARK: - Repository
-    var userRepository: DataRepository
-    var userCacheRepository: DataCacheRepository
+    private var userRepository: DataRepository
+    private var userCacheRepository: DataRepository
     
-    init(_ repository: DataRepository, cacheRepository: DataCacheRepository) {
+    init(_ repository: DataRepository, _ cacheRepository: DataRepository) {
         userRepository = repository
         userCacheRepository = cacheRepository
     }

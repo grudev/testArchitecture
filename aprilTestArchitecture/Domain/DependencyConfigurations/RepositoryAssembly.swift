@@ -13,11 +13,11 @@ class RepositoryAssembly: Assembly {
     
     func assemble(container: Container) {
         
-        container.register(DataCacheRepository.self) { _ in
+        container.register(DataRepository.self, name: RepoInjectionType.cache) { _ in
             DataLocalCacheRepository()
         }
         
-        container.register(DataRepository.self) { _ in
+        container.register(DataRepository.self, name: RepoInjectionType.real) { _ in
             DataNetworkRepository()
         }
         

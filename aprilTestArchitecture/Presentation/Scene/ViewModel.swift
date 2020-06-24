@@ -23,7 +23,7 @@ class ViewModel: BaseViewModel {
     }
     
     init(_ uc: DataUseCase) {
-        self.useCase = uc
+        useCase = uc
     }
     
     func getData(_ request: DataRequest) {

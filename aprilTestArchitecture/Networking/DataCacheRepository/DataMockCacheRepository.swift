@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataMockCacheRepository: DataCacheRepository {
+class DataMockCacheRepository: DataRepository {
     
     typealias Output = Result<[DataResponse], ErrorModel>
     

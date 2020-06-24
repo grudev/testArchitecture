@@ -14,11 +14,11 @@ class UseCaseAssembly: Assembly {
     func assemble(container: Container) {
         
         container.register(DataUseCase.self) { resolver -> DataUseCase in
-            guard let repo = resolver.resolve(DataRepository.self),
-                let cacheRepo = resolver.resolve(DataCacheRepository.self) else {
+            guard let repo = resolver.resolve(DataRepository.self, name: RepoInjectionType.real),
+                let cacheRepo = resolver.resolve(DataRepository.self, name: RepoInjectionType.cache) else {
                     fatalError("ERROR: UseCaseAssembly :: Missing dependency!")
             }
-            return DataUseCase(repo, cacheRepository: cacheRepo)
+            return DataUseCase(repo, cacheRepo)
         }
         
     }
