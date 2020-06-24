@@ -15,5 +15,5 @@ protocol DataCacheRepository {
 //        associatedtype Input
 //        associatedtype Output
         
-    func getData(_ request: DataRequest) -> Observable<Result<[DataResponse], ErrorModel>>
+    func getData(_ request: DataRequest) -> MutableObservable<Result<[DataResponse], ErrorModel>>
 }

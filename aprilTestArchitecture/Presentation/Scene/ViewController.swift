@@ -31,13 +31,15 @@ class ViewController: UIViewController {
         }.add(to: &disposal)
         
         // NOTE: - Capturing self as weak reference is very important to prevent memory leaks if it's called. [weak self]
-        viewModel?.output.dataSource.observe { [weak self] (newValue, oldValue) in
+        viewModel?.dataSource.observe { [weak self] (newValue, oldValue) in
             switch newValue {
             case .success(let data):
                 print("NEW DATA ARRIVED: \(data.count)")
                 self?.dataLabel.text = "Data \n Returned objects: \(data.count)"
             case .failure(let error):
                 print("ERROR: Handle data error \(error.message)")
+            case .none:
+                print("ERROR: Handle empty data error")
             }
         }.add(to: &disposal)
         

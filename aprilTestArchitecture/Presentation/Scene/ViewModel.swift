@@ -12,10 +12,15 @@ class ViewModel: BaseViewModel {
     
     private var useCase: DataUseCase
     
-    private (set) var output = ViewController.Output()
-    
     // MARK: - Observable
     private var disposal = Disposal()
+    
+    typealias Output = (Result<[DataResponse], ErrorModel>)?
+    private var privateDataSource: MutableObservable<Output> = MutableObservable(wrappedValue: nil)
+    
+    var dataSource: Observable<Output> {
+        privateDataSource
+    }
     
     init(_ uc: DataUseCase) {
         self.useCase = uc
@@ -24,26 +29,11 @@ class ViewModel: BaseViewModel {
     func getData(_ request: DataRequest) {
         observeLoading.wrappedValue = true
         
-        useCase.executeAsync(request).observe { [weak self] (newValue, oldValue) in
-            self?.output.dataSource.wrappedValue = newValue
+        useCase.executeAsync(request).observe { [weak self] (newValue, _) in
+            self?.privateDataSource.wrappedValue = newValue
             self?.observeLoading.wrappedValue = false
         }.add(to: &disposal)
         
     }
     
-}
-
-// MARK: - Input
-
-extension ViewController {
-    struct Input { }
-}
-
-// MARK: - Output
-
-extension ViewController {
-    struct Output {
-        typealias Output = Result<[DataResponse], ErrorModel>
-        var dataSource: MutableObservable<Output> = MutableObservable(wrappedValue: Result.failure(empty))
-    }
 }

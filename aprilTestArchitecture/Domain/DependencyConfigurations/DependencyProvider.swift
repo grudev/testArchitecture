@@ -30,7 +30,6 @@ class DependencyProvider {
         
     }
     
-    
 }
 
 // MARK: - Custom object scope for our dependancies

@@ -24,11 +24,12 @@ class DataUseCase: UseCaseable {
         userCacheRepository = cacheRepository
     }
     
-    func run(_ input: Input) -> Observable<Output>  {
+    func run(_ input: Input) -> Observable<Output> {
         let observable = userCacheRepository.getData(input)
         
-        // TODO: - How to detect if cache is slower than actual request, that we don't have to update our Observable?
-        let updateObservable = userRepository.getData(input)
+        userRepository.getData(input).observe { (newValue, oldValue) in
+            observable.wrappedValue = newValue
+        }
         
         return observable
     }

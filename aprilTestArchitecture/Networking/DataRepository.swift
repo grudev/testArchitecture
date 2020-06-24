@@ -9,12 +9,5 @@
 import Foundation
 
 protocol DataRepository {
-    
-    //NOTE: - Can't set associated types to this protocol because this will require the parent class (the UseCase object) to pass these as generic types.
-    // Thus, this will create deep generic passing
-//    associatedtype Input
-//    associatedtype Output
-    
-    func getData(_ request: DataRequest) -> Observable<Result<[DataResponse], ErrorModel>>
-    
+    func getData(_ request: DataRequest) -> MutableObservable<Result<[DataResponse], ErrorModel>>
 }

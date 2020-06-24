@@ -42,6 +42,7 @@ public class Observable<T> {
         _onDispose = {}
     }
     
+    @discardableResult
     public func observe(_ queue: DispatchQueue? = nil, _ observer: @escaping Observer) -> Disposable {
         lock.lock()
         defer { lock.unlock() }

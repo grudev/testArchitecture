@@ -15,10 +15,10 @@ class DataLocalCacheRepository: DataCacheRepository {
     // MARK: - Observable
     private let dataSubject: MutableObservable<Output> = MutableObservable(wrappedValue: Result.failure(empty))
     
-    func getData(_ request: DataRequest) -> Observable<Output> {
+    func getData(_ request: DataRequest) -> MutableObservable<Output> {
         
         // Call Network Layer
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             
             var response = [DataResponse]()
             for index in 0...request.numberOfItems-1 {
